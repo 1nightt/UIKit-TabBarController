@@ -2,11 +2,12 @@ import UIKit
 
 /// Экран таймера
 final class TimerViewController: UIViewController {
-    // MARK: - IBOutlet
+    // MARK: - Private IBOutlet
     @IBOutlet private weak var timerPicker: UIPickerView!
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var startButton: UIButton!
     
+    // MARK: - Private Properties
     private var hours = [Int](0...23)
     private var minute = [Int](0...59)
     private var seconds = [Int](0...59)
@@ -30,6 +31,7 @@ final class TimerViewController: UIViewController {
     
 }
 
+/// UIPickerViewDelegate, UIPickerViewDataSource
 extension TimerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
